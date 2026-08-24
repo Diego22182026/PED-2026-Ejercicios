@@ -45,6 +45,38 @@ void mostrarAgenda(Contacto agenda[], int n){
         return n + 1;
     }
 
+    int buscarContacto(Contacto agenda[], int n, string nombre){
+
+        for (int i = 0; i < n; i++){
+            if (agenda[i].nombre == nombre){
+                return i;
+            }
+        }
+    // Si el for termina y jamas se encontro el elemento
+        return -1;
+    }
+
+void mostrarEncontrado(Contacto agenda[], int n){
+
+    string nombre;
+    cout << "Nombre del contacto que desea mostrar: ";
+    getline (cin>>ws, nombre);
+
+    int pos = buscarContacto(agenda, n, nombre);
+
+    if (pos == -1){
+
+        cout << "No se encuentra el contacto " << endl;
+        return;
+    }
+
+    cout << "Contacto en la posicion " << pos << endl;
+    cout << "Nombre: " << agenda[pos].nombre << endl;
+    cout << "Telefono: " << agenda[pos].telefono << endl;
+    cout << "Email: " << agenda[pos].email << endl;
+
+}
+
 
 int main (){
 
