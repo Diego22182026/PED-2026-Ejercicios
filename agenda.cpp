@@ -8,7 +8,7 @@ struct Contacto{
 
 const int contactos_max = 100;
 Contacto Agenda[contactos_max];
-int totalContactos;
+int totalContactos = 0;
 
 void mostrarAgenda(Contacto agenda[], int n){
     cout << "Agenda de contactos: " << endl;
@@ -117,6 +117,7 @@ void ejecutarAgenda(){
 
 int main (){
 
+    ejecutarAgenda();
 
     return 0;
 }
